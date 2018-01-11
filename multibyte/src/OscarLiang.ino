@@ -15,7 +15,7 @@ void debugln(String s) {
 
 void debug(String s) {
   if (DEBUG == true) {
-    Output.println(s);
+    Output.print(s);
   }
 }
 
