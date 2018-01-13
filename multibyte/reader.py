@@ -12,6 +12,9 @@ address = 0x04
 
 while True: #event loop
   try: 
+    #this should work without any errors
+    #try turning this on in /boot/config.txt to eliminate errors
+    #dtparam=i2c_arm=on,i2c_arm_baudrate=38400
     message = bus.read_i2c_block_data(address,0)
     print("message " + str(message))
   except KeyboardInterrupt:
