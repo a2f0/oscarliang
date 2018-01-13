@@ -14,11 +14,9 @@ while True: #event loop
   try: 
     message = bus.read_i2c_block_data(address,0)
     print("message " + str(message))
-    time.sleep(1)
   except KeyboardInterrupt:
     print "Killed."
     sys.exit()
   except:
     print("could not read from device");
     time.sleep(1)
-   
