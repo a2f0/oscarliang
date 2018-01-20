@@ -1,5 +1,6 @@
 #include "Wire.h"
 #define Output SerialUSB
+#define PIN_SELECT 12
 
 void setup()
 {
@@ -8,6 +9,13 @@ void setup()
   Output.begin(9600);
   while (!Output);             // Leonardo: wait for serial monitor
   Output.println("\nI2C Scanner");
+
+  const int val = digitalRead(PIN_SELECT);
+  if(val == HIGH) {
+    Output.println("HIGH");
+  } else {
+    Output.println("LOW");
+  }
 }
 
 void loop()
